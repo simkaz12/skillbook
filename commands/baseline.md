@@ -1,0 +1,5 @@
+---
+description: Build the merge-base snapshot for the repo this session is in, or for the repos or trees you name, then print one table.
+---
+
+Run `python3 "$HOME/.claude/skills/../scripts/test-baseline.py" baseline $ARGUMENTS` (it brings up the containers the commands need) in the background with the Bash tool (`run_in_background`), wait for it to exit, and print its table unchanged: repo, base@commit, tests, pre-existing failures, duration. The snapshot is keyed by `git merge-base HEAD origin/<base>` and is reused by every tree on that base. `/baseline` is for warming it by hand, since `spec-reviewer` starts the run that builds it. With no arguments it covers only the repo of the current directory (the main checkout when in a linked worktree), which must sit under `~/Projects` and be named in a `testing.md`; name repos or trees as arguments to snapshot others, for example `/baseline crm-api crm-web`. Exit 2 means the repo could not be resolved or at least one repo reported an error: print the error lines from stderr under the table (or alone when there is no table).

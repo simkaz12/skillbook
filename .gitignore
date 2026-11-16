@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# runtime logs / caches that live alongside tracked code
+capture.log
+*.log
+
+# never track: superseded copies — git is the backup now
+*.bak
+*.bak.*
+*.bak-*
+*.retired
+
+# machine-local
+settings.local.json
+.DS_Store
+
+# Claude Code-managed (claude.ai skill sync)
+skills/synced/
+
+# generated intro site
+site/build/

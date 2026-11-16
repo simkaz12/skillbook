@@ -1,0 +1,9 @@
+---
+name: what
+description: Stop. That last message did not land — re-pitch it.
+disable-model-invocation: true
+---
+
+> Provenance: derived from Matt Pocock's `skills/productivity/wait-what/SKILL.md` (https://github.com/mattpocock/skills, MIT License, Copyright (c) 2026 Matt Pocock), edited by the repo owner. See THIRD_PARTY_NOTICES.md.
+
+Wait — I don't understand where you've got to here. Re-pitch that: give me a little bit of context, talk in ASD-STE100 Simplified Technical English, and use the ubiquitous language from `CONTEXT.md`.

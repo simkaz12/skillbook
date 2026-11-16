@@ -1,0 +1,19 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {"type": "command", "command": "bash \"$HOME/.claude/hooks/run.sh\" claude"}
+        ]
+      }
+    ],
+    "UserPromptExpansion": [
+      {
+        "matcher": "ping|pong",
+        "hooks": [
+          {"type": "command", "command": "bash \"$HOME/.claude/hooks/helper.sh\""}
+        ]
+      }
+    ]
+  }
+}

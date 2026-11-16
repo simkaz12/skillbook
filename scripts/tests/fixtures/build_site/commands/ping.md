@@ -1,0 +1,5 @@
+---
+description: Ping command.
+---
+
+Ping.

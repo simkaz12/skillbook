@@ -1,0 +1,1 @@
+On a CRM ticket, the focused trace is progressive `recon`. The owner has no access to production or pre-prod data. Never plan a step that needs someone to query there; make the code or migration handle the unknown data (skip and log, not stop).

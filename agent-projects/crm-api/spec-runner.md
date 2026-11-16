@@ -1,0 +1,1 @@
+crm-api conventions: run PHP and Composer through Docker, never local PHP. The compose service is `php_fpm` (container `crm_web`). Run Pint after edits. Keep to the Operations layer, and keep Fractal and Resources separate. The brief's steps assume all of this.

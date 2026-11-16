@@ -1,0 +1,1 @@
+A new Lance column needs an open-time migration and a rehearsal against an rsync copy of the real store. Never open a live store through code that writes on open; open tables read-only with `lancedb.connect` plus `open_table`.

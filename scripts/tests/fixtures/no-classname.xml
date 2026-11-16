@@ -1,0 +1,1 @@
+<testsuites><testsuite name="x"><testcase name="lonely" file="tests/a.py"/></testsuite></testsuites>

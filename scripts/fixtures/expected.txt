@@ -1,0 +1,7 @@
+skills/fixture-dangling/SKILL.md:8: skill-ref: references skill `never-existed` — no skills/never-existed/SKILL.md and no commands/never-existed.md
+skills/fixture-dangling/SKILL.md:9: skill-ref: references skill `also-missing` — no skills/also-missing/SKILL.md and no commands/also-missing.md
+skills/fixture-dangling/SKILL.md:10: skill-ref: references skill `article-missing` — no skills/article-missing/SKILL.md and no commands/article-missing.md
+skills/fixture-retired/SKILL.md:8: retired-tool: calls retired pi-memory tool mcp__pi-memory__ledger_save — resolves at runtime, writes into the frozen archive
+skills/fixture-retired/SKILL.md:9: retired-tool: names retired pi-memory tool session_digest — resolves at runtime, writes into the frozen archive
+skills/fixture-caller/SKILL.md:4: fork-tools: forks into `fixture-agent` but its tools: allowlist is missing Skill — a hard allowlist, so the fork cannot load it
+skills/fixture-dispatch/SKILL.md:8: agent-ref: names agent `ghost-agent` in subagent_type — no agents/ghost-agent.md

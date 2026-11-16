@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Skillbook</title>
+<link rel="icon" href="data:,">
+<style>
+{{CSS}}
+</style>
+</head>
+<body>
+<header id="topbar">
+  <a class="logo" href="#/main">Skillbook</a>
+  <button
+    id="menu-button"
+    type="button"
+    aria-expanded="false"
+    aria-controls="side"
+  >Menu</button>
+</header>
+<div id="layout">
+  <div id="side">
+    <a class="logo" href="#/main">Skillbook</a>
+    <form id="search-form" role="search">
+      <input
+        id="search-input"
+        type="search"
+        placeholder="Search skillbook"
+        aria-label="Search skillbook"
+        autocomplete="off"
+      >
+    </form>
+    <nav id="nav" aria-label="Navigation"></nav>
+  </div>
+  <main id="content"></main>
+</div>
+<script id="site-data" type="application/json">{{DATA}}</script>
+<script>
+{{MARKED}}
+</script>
+<script>
+{{APP}}
+</script>
+</body>
+</html>

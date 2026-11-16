@@ -1,0 +1,66 @@
+[
+  {
+    "from": "principle/delegation-tiers",
+    "to": "hooks/load-agent-additions.sh"
+  },
+  {
+    "from": "principle/delegation-tiers",
+    "to": "hooks/load-tabularium-role-context.sh"
+  },
+  {
+    "from": "principle/memory",
+    "to": "hooks/scope-map.sh"
+  },
+  {
+    "from": "principle/memory",
+    "to": "hooks/load-tabularium-context.sh"
+  },
+  {
+    "from": "principle/memory",
+    "to": "hooks/load-tabularium-role-context.sh"
+  },
+  {
+    "from": "principle/config-as-repo",
+    "to": "scripts/install.sh"
+  },
+  {
+    "from": "principle/config-as-repo",
+    "to": "scripts/doctor.sh"
+  },
+  {
+    "from": "principle/config-as-repo",
+    "to": "scripts/sync-codex.sh"
+  },
+  {
+    "from": "principle/config-as-repo",
+    "to": "scripts/sync-mcp.sh"
+  },
+  {
+    "from": "principle/config-as-repo",
+    "to": "scripts/skill-project.sh"
+  },
+  {
+    "from": "principle/config-as-repo",
+    "to": "scripts/corpus-check.py"
+  },
+  {
+    "from": "principle/config-as-repo",
+    "to": "hooks/load-agent-additions.sh"
+  },
+  {
+    "from": "principle/review-gates",
+    "to": "scripts/test-baseline.py"
+  },
+  {
+    "from": "principle/review-gates",
+    "to": "command/baseline"
+  },
+  {
+    "from": "command/flag",
+    "note": "handled by the corpus capture hook (not included)"
+  },
+  {
+    "from": "command/good",
+    "note": "handled by the corpus capture hook (not included)"
+  }
+]

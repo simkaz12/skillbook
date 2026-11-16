@@ -1,0 +1,1 @@
+Laravel standard: this repo opts out. CRM (`crm-api`, `crm-web`, scope `crm`) does not follow the shared Laravel standard. Follow its repository conventions and the brief; skip the standard's implementation and conflict checks.

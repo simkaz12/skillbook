@@ -1,0 +1,3 @@
+Local API: `https://api.crm.localhost:466` (host-routed, no `/api/` prefix). The nginx container `crm_nginx` maps host port 466 to 443.
+
+Save round trip without a browser: `curl -sk -c cj.txt -H "Origin: http://app.crm.localhost:3000" -H "Referer: http://app.crm.localhost:3000/" https://api.crm.localhost:466/sanctum/csrf-cookie`, URL-decode the `XSRF-TOKEN` cookie into an `X-XSRF-TOKEN` header, add a `userId: <id>` header to impersonate (a local-only middleware), and send the request with the same cookie jar. Then read the stored row with `docker compose exec -T postgres psql -U app -d app -c "<select>"`. A 200 with a success toast does not show the value was stored.

@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "SubagentStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$HOME/.claude/hooks/load-agent-additions.sh\"",
+            "statusMessage": "Loading project additions",
+            "additionalContextLimit": 1500
+          }
+        ]
+      }
+    ]
+  }
+}

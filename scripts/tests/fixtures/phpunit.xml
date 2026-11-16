@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Feature" tests="4">
+    <testcase name="test_ok" file="/var/www/html/tests/Feature/FooTest.php" class="Tests\Feature\FooTest" classname="Tests.Feature.FooTest" assertions="1" time="0.01"/>
+    <testcase name="test_bad" file="/var/www/html/tests/Feature/FooTest.php" class="Tests\Feature\FooTest" classname="Tests.Feature.FooTest" assertions="1" time="0.01">
+      <failure type="PHPUnit\Framework\ExpectationFailedException">Failed asserting that false is true.
+/var/www/html/tests/Feature/FooTest.php:12</failure>
+    </testcase>
+    <testcase name="test_err" file="/var/www/html/tests/Feature/BazTest.php" class="Tests\Feature\BazTest" classname="Tests.Feature.BazTest" assertions="0" time="0.01">
+      <error type="Error">Call to undefined method</error>
+    </testcase>
+    <testcase name="test_skip" file="/var/www/html/tests/Feature/BazTest.php" class="Tests\Feature\BazTest" classname="Tests.Feature.BazTest" assertions="0" time="0.01">
+      <skipped/>
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="nextest-run" tests="2" failures="1" errors="0">
+    <testsuite name="herdr::unit" tests="2" disabled="0" errors="0" failures="1">
+        <testcase name="tests::ok" classname="herdr::unit" timestamp="2026-10-07T08:00:00.000+00:00" time="0.01"/>
+        <testcase name="tests::bad" classname="herdr::unit" timestamp="2026-10-07T08:00:00.000+00:00" time="0.01">
+            <failure message="assertion failed" type="test failure">thread panicked</failure>
+        </testcase>
+    </testsuite>
+</testsuites>

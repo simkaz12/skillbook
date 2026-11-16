@@ -1,0 +1,10 @@
+{
+  "user": {
+    "tabularium-mcp": { "type": "http", "url": "http://memory.example.internal:8787/mcp" },
+    "playwright": { "type": "stdio", "command": "npx", "args": ["-y", "@playwright/mcp@0.0.82", "--headless", "--isolated", "--executable-path", "/usr/bin/chromium", "--idle-timeout", "300000", "--output-dir", "$HOME/.cache/playwright-mcp"], "env": {} }
+  },
+  "projects": {
+    "crm-api": { "jira": { "type": "http", "url": "https://mcp-gateway.example/mcp/jira", "headersHelper": "$HOME/Projects/skillbook/scripts/mcp-headers.sh" } },
+    "crm-web": { "jira": { "type": "http", "url": "https://mcp-gateway.example/mcp/jira", "headersHelper": "$HOME/Projects/skillbook/scripts/mcp-headers.sh" } }
+  }
+}

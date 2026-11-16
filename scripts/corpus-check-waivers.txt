@@ -1,0 +1,10 @@
+# Waivers for scripts/corpus-check.py.
+#
+# One waiver per line:   <check> <path-glob> <token>   # reason (required)
+# check:  skill-ref | retired-tool | fork-tools | agent-ref | *
+# token:  the exact name the finding reports, or *
+#
+# A waiver silences a deliberate mention. It is not a fix. Unused waivers are
+# reported in the clean-run summary so they can be deleted once stale.
+
+agent-ref skills/README.md qa-fault-isolator  # historical record of the 2026-08-20 removal, not a live dispatch
