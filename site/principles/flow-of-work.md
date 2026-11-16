@@ -7,7 +7,7 @@ A piece of work passes through up to five stages, and each stage has a skill. No
 
 ## The path
 
-1. Investigate. `recon` maps one ticket read-only, starting narrow and widening only when a named gap needs it. `diagnose` does the same for a hard bug, with a loop from reproduction to regression test.
+1. Investigate. `recon` is a reconnaissance pass that gathers the context the next decision needs, read-only, starting narrow and widening only when a named gap needs it. Most of its use is on work tickets, so its entry point takes one. `diagnose` does the same for a hard bug, with a loop from reproduction to regression test.
 2. Agree. `grill-me` questions the owner until requirements and design choices have a shared shape. `grill-with-docs` does the same and also writes the glossary and the hard calls into the repository.
 3. Brief. `to-spec` turns the settled agreement into an execution brief with scopes, verify steps and an out-of-scope line. A brief can be solo or split into independent lanes. Work too large for one session goes to `wayfinder`, which maps it as decision tickets.
 4. Execute and review. `spec-runner` runs the brief and `spec-reviewer` gates the result. [Review gates](#/principle/review-gates) covers that half.

@@ -60,7 +60,7 @@ The Codex rule is that main never runs Codex. After a `spec-runner`, or after a 
 The skills form a path. A piece can skip stages, but skipping is meant to be a choice. `site/principles/flow-of-work.md` and `site/principles/review-gates.md` hold the reasoning.
 
 1. `flow` keeps one piece in one thread and picks the smallest next step that removes a named uncertainty. It does not replace the skills below; calling them directly still works.
-2. `recon` maps one Jira ticket read-only, starting narrow and widening only for a named gap. `diagnose` does the same for a hard bug.
+2. `recon` is a reconnaissance pass: gather the context the next decision needs, read-only, starting narrow and widening only for a named gap. Its entry point takes a ticket key because most of its use is on work tickets, but the principle applies to any change. `diagnose` does the same for a hard bug.
 3. `grill-me` questions the owner until requirements and design choices have a shared shape. `grill-with-docs` also writes the glossary and the hard calls into the repo.
 4. `to-spec` turns the agreement into a solo or split execution brief, with scopes, verify steps and an out-of-scope line. Work too large for one session goes to `wayfinder`, which maps it as decision tickets.
 5. `spec-runner` runs the brief. In a split brief, one runner per independent lane runs in waves, and an integrate-mode runner finishes.
@@ -153,6 +153,6 @@ Most of the text is the owner's. Some is not, and each such file carries a prove
 
 ## Known rough edges
 
-- Several skills still assume a Jira-based workflow (`recon`, `qa-ticket`, parts of `land`) and a Docker-based Laravel stack. The `crm` project files show where that assumption is configured.
+- Several skills still take a Jira-style ticket as their input (`recon`'s entry point, `qa-ticket`, parts of `land`) and a Docker-based Laravel stack. The `crm` project files show where that assumption is configured.
 - The memory-context hooks are kept but unregistered, as noted under Hooks.
 - Settings, hooks and skills reference tools such as `mcp__t3-code__memory_recall` and `mcp__jira__jira_tool`. They exist only on a machine running those MCP servers.

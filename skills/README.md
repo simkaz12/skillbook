@@ -15,7 +15,7 @@ Start by closing understanding, then pick an executor by size and shape.
 ```
 Want one active thread to choose only the next needed step? .. flow
 
-Fresh Jira ticket, haven't read it yet? ........ recon <n>  (read-only scope, then ↓)
+Need context before deciding? (e.g. a fresh ticket) ... recon <n>  (read-only scope, then ↓)
 
 Do you understand the problem well enough to build?
 ├─ No, stress-test it in conversation only ............. grill-me
@@ -35,7 +35,7 @@ Two execution shapes ship from the same front door: **solo** (`to-spec` writes t
 ## Plan & design
 
 - **flow** — keeps a bounded ticket or a larger map effort in one active thread, choosing only the next needed investigation, grill, brief, execution, review, or verification. It carries settled agreement through real handoffs; direct use of its named skills still works.
-- **recon** — progressive read-only scope of one Jira ticket: orient, trace one named gap, then expand only when the evidence requires it. Writes `docs/recon/PROJ-<n>.md`; never edits code or transitions Jira.
+- **recon** — a reconnaissance pass that gathers context before design, read-only and progressive. Its entry point takes a ticket (the common case at work): orient, trace one named gap, then expand only when the evidence requires it. Writes `docs/recon/PROJ-<n>.md`; never edits code or transitions Jira.
 - **grill-me** — interview to reach shared understanding and state the behavior, decisions, constraints, and evidence that the brief inherits.
 - **grill-with-docs** — grill *and* write it down: glossary terms to `CONTEXT.md`, hard-to-reverse calls to `docs/adr/` + Tabularium.
 - **to-spec** — turns settled agreement into a solo or split execution brief without rediscovery, or routes genuinely open decision territory into `/wayfinder`.
