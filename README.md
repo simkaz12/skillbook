@@ -1,6 +1,14 @@
 # skillbook
 
-A Claude Code configuration kept as a git repo. It holds the skills, subagent definitions, hooks, scripts, commands, output style, theme, `settings.json` and global instruction files that shape how Claude Code (and, through a mirror, Codex CLI) behaves on one developer's machine. `~/.claude` is a set of symlinks into a checkout of this repo, so editing a file here changes the live configuration.
+The instructions and workflows I use with Claude Code and Codex, kept in one repository.
+
+It contains skills for investigating and implementing changes, agent roles for delegating work, and hooks and scripts that connect those practices to the tools. It also versions commands, output style, theme, `settings.json` and global instruction files. `~/.claude` is a set of symlinks into a checkout of this repo, so editing a file here changes the live configuration.
+
+## How this fits
+
+Skillbook defines how agents work. [Tabularium](https://github.com/simkaz12/tabularium) supplies persistent memory; my [T3 Code fork](https://github.com/simkaz12/t3code) exposes its current memory tools and memory tray. Memory integration is optional when adopting the configuration.
+
+[Pi Assistant](https://github.com/simkaz12/pi-assistant) documents the homelab and additional agent tools used elsewhere in the setup.
 
 This is a sanitized public copy. Client and employer names, ticket keys, people, hostnames, addresses and credentials were replaced or removed, and a few skills that only made sense for one client or one home server were dropped. The structure and the mechanisms are unchanged. Stand-ins used throughout: `crm-api` and `crm-web` are a fictional Laravel API and Nuxt SPA pair, `PROJ-123` is a Jira-style ticket key, `memory.example.internal` is the memory server, and `<owner>` is a GitHub account. Some project files (for example `skills/land/projects/crm.md`) were rewritten as short examples of the per-project mechanism rather than copied.
 
@@ -93,11 +101,11 @@ Two more scripts, `hooks/load-tabularium-context.sh` (session start) and `hooks/
 
 ## Memory
 
-Memory is a separate server called Tabularium, reached over MCP. Its code is not in this repo. What is here is how the configuration uses it.
+Memory lives in [Tabularium](https://github.com/simkaz12/tabularium). Its v1 MCP server is a read-only archive; current v2 memory tools reach a separate HTTP server through my [T3 Code fork](https://github.com/simkaz12/t3code). What is here is how the configuration uses them.
 
 - Recall on demand. `GLOBAL-CORE.md` says nothing loads at session start. Main and each subagent call `memory_recall` (the T3 Code tool) with an `audience` of `decider`, `builder`, `reviewer` or `navigator`. `hand-do` recalls as builder, `hand-ex` as navigator, `spec-reviewer` as reviewer, main as decider. Records with no audience come back for every role.
 - The older server (`mcp__tabularium-mcp__recall`, `decisions_query`, `decision`) is a read-only legacy archive and a fallback.
-- Saving goes through `memory_propose` only, with `kind` (decision, fact or defect), a short headline, the claim, and for a decision the alternative that was rejected. Agents never propose. They list what is worth keeping in a `### Memory` block of their return, and main files it. A fact or decision waits for the owner's approval; a defect saves directly unless it closes or sits near an existing record.
+- Saving goes through `memory_propose` only, with `kind` (decision, fact or defect), a short headline, the claim, and for a decision the alternative that was rejected. Agents never propose. They list what is worth keeping in a `### Memory` block of their return, and main files it. The instructions in this public snapshot ask for owner approval before saving facts or decisions; a defect saves directly unless it closes or sits near an existing record. In current v2, agent proposals normally apply immediately; a close fact or decision can be held for a fold ask. See [Tabularium v2](https://github.com/simkaz12/tabularium#v2) for the current behavior.
 - Scope is not the repo name. `hooks/scope-map.sh` maps a checkout path to a scope, and pairs collapse: in the shipped example `crm-api` and `crm-web` both map to `crm`. The same file gives each repo's base branch. Memory recall passes the resolved scope.
 - `mcp/servers.json` lists the memory server and a Playwright server for every project, and project-scoped servers for named repos. `scripts/sync-mcp.sh` copies them into `~/.claude.json`. The `headersHelper` path in the example points at a script that prints auth headers; it is not included.
 
@@ -156,3 +164,4 @@ Most of the text is the owner's. Some is not, and each such file carries a prove
 - Several skills still take a Jira-style ticket as their input (`recon`'s entry point, `qa-ticket`, parts of `land`) and a Docker-based Laravel stack. The `crm` project files show where that assumption is configured.
 - The memory-context hooks are kept but unregistered, as noted under Hooks.
 - Settings, hooks and skills reference tools such as `mcp__t3-code__memory_recall` and `mcp__jira__jira_tool`. They exist only on a machine running those MCP servers.
+
